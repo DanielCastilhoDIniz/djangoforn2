@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-$6kzl@mep__*-k_ckmrrtw^#j-fu$)s5va5x23n&=24_lhd07r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["danielno.pythonanywhere.com", "127.0.0.1", "localhost",]
 
 
 # Application definition
@@ -90,6 +90,17 @@ DATABASES = {
 }
 """
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'danielno$meubanco',
+        'USER': 'danielno',
+        'PASSWORD': 'sua-senha-do-mysql',
+        'HOST': 'danielno.mysql.pythonanywhere-services.com',
+        'PORT': '3306',
+    }
+}
+
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
 
@@ -139,3 +150,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'seu_email@gmail.com'
 EMAIL_HOST_PASSWORD = 'sua_senha'
 """
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://danielno.pythonanywhere.com"
+]
