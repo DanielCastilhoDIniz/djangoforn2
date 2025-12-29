@@ -1,0 +1,27 @@
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+</head>
+<body>
+    {% bootstrap_css%}
+    <div class="container">
+        <h1>Product</h1>
+        {% bootstrap_messages %}
+        <form action="{% url 'product' %}" method="post" enctype="multipart/form-data" autocomplete="off">
+            {% csrf_token %}
+
+            {% bootstrap_form form %}
+
+            {% buttons %}
+            <button type="submit" class="btn btn-primary">Salvar</button>
+            {% endbuttons %}
+        </form>
+    </div>
+        {% comment %} {% bootstrap_alert "Produto cadastrado com sucesso!" alert_type="success" %} {% endcomment %}
+  {% bootstrap_javascript jquery='full' %}
+</body>
+</html>
